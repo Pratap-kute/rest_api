@@ -1,0 +1,36 @@
+{
+  "env": {
+    "node": true, // Specify Node.js environment
+    "es2021": true // Allow latest ECMAScript features
+  },
+  "extends": [
+    "standard-with-typescript", // Base configuration for standards and TypeScript
+    "plugin:prettier/recommended" // Add Prettier integration for consistent formatting
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json" // Reference your TypeScript project configuration
+  },
+  "plugins": ["prettier"], // Enable Prettier plugin
+  "rules": {
+    // Standard rules (consider customizing based on your project's requirements)
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "comma-dangle": ["error", "always-multiline"],
+    "array-bracket-spacing": ["error", "always", { "singleValue": false }],
+    "object-curly-spacing": ["error", "always"],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+
+    // Additional rules for REST APIs
+    "no-console": "warn", // Warn about using console in production-like environments
+    "camelcase": ["error", { "properties": "always" }], // Enforce camelCase for properties
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // Warn about unused variables, except those starting with underscore
+    "strict": ["error", "global"], // Enforce strict mode for better practices
+    "no-undef": ["error"], // Ensure defined variables before use
+    "no-prototype-builtins": ["warn"], // Warn about using Object.prototype builtins directly
+
+    // Adjust Prettier rules if desired (refer to Prettier documentation)
+    "prettier/prettier": ["error", { "endOfLine": "auto" }] // Enforce Prettier formatting
+  }
+}
